@@ -1,8 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-function Home() {
-  return <h1>This is Home (inline)</h1>;
-}
+// src/App.jsx
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home.jsx';
 
 export default function App() {
   return (
