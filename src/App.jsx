@@ -1,3 +1,15 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+function Home() {
+  return <h1>Home Page Test</h1>;
+}
+
 export default function App() {
-  return <h1>🔥 Test Render in App.jsx</h1>;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
+  );
 }
