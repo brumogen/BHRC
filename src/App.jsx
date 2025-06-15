@@ -1,4 +1,5 @@
-// src/App.jsx
+import Home from './pages/Home';
+
 export default function App() {
-  return <h1>Hello from App!</h1>;
+  return <Home />;
 }
