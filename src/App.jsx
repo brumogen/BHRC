@@ -1,4 +1,12 @@
-console.log('🚀 App component loaded');
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+console.log('🚀 App loaded with Router');
 export default function App() {
-  return <h1>Hello in Vite/Netlify!</h1>;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
+  );
 }
