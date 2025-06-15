@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-console.log('🚀 App loaded with Router');
+
+function Home() {
+  return <h1>This is Home (inline)</h1>;
+}
+
 export default function App() {
   return (
     <Router>
