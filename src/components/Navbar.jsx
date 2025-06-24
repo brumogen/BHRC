@@ -1,4 +1,3 @@
-// bhrc/src/components/Navbar.jsx
 import React from 'react';
 
 export default function Navbar() {
@@ -8,56 +7,33 @@ export default function Navbar() {
       flexDirection: 'column',
       alignItems: 'center',
       padding: '20px',
-      backgroundColor: '#fff',
-      boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+      backgroundColor: '#0e1a2b', // Updated background to match logo
+      boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
       width: '100%',
       boxSizing: 'border-box',
     }}>
-      {/* Title */}
-      <h1 style={{
-        fontFamily: "'Playfair Display', serif", // Retaining the elegant font
-        fontSize: '2.8em',
-        margin: '0 0 30px 0',
-        color: '#2c3e50',
-        textAlign: 'center',
-        lineHeight: '1.2',
-        padding: '0 10px',
-        boxSizing: 'border-sizing',
-        whiteSpace: 'normal',
-      }}>
-        Bustling Horse Race Club
-      </h1>
+      {/* Logo has likely replaced this now — delete if using logo image */}
+      {/* <h1>...</h1> */}
 
-      {/* Sexy Looking Box - The Sleek Navigation Bar (Now Scrollable) */}
       <nav style={{
         display: 'flex',
-        // Removed `flexWrap: 'wrap'` to force single line
-        // Removed `justifyContent: 'center'` to allow links to naturally flow from left and enable scroll
         alignItems: 'center',
         gap: '25px',
-        backgroundColor: '#34495e',
-        border: '1px solid #7f8c8d',
+        backgroundColor: '#101820', // Darker shade for nav pill
+        border: '1px solid #0077cc',
         borderRadius: '40px',
-        padding: '15px 20px', // Adjusted horizontal padding to allow more scroll room
+        padding: '15px 20px',
         marginBottom: '30px',
-        boxShadow: '0 6px 15px rgba(0,0,0,0.2)',
-        maxWidth: '100%', // Allow it to take full width
-        width: 'auto', // Allow content to dictate width before overflow
+        boxShadow: '0 6px 15px rgba(0,0,0,0.4)',
+        maxWidth: '100%',
+        width: 'auto',
         boxSizing: 'border-box',
-
-        // --- NEW STYLES FOR SCROLLABILITY ---
-        overflowX: 'auto', // Enable horizontal scrolling when content overflows
-        whiteSpace: 'nowrap', // Crucial: Prevents items from wrapping to the next line
-        WebkitOverflowScrolling: 'touch', // Improves scrolling performance on iOS devices
-        // Hide scrollbar for cleaner look (optional, but common)
-        scrollbarWidth: 'none', /* Firefox */
-        MsOverflowStyle: 'none',  /* IE and Edge */
-        '&::-webkit-scrollbar': { /* Chrome, Safari, Opera */
-            display: 'none'
-        },
+        overflowX: 'auto',
+        whiteSpace: 'nowrap',
+        WebkitOverflowScrolling: 'touch',
+        scrollbarWidth: 'none',
+        MsOverflowStyle: 'none',
       }}>
-        {/* Navigation Links */}
-        {/* Filtered out 'Contact' and 'FAQ' */}
         {['Home', 'Race Centre', 'Mint', 'Stable', 'About'].map((item) => (
           <a
             key={item}
@@ -65,17 +41,17 @@ export default function Navbar() {
             style={{
               textDecoration: 'none',
               color: 'white',
-              fontFamily: "'Montserrat', sans-serif", // Changed to Montserrat for a sexier font
-              fontSize: '1.25em', // Slightly increased font size
+              fontFamily: "'Montserrat', sans-serif",
+              fontSize: '1.25em',
               fontWeight: 'bold',
               padding: '8px 18px',
               borderRadius: '20px',
-              transition: 'background-color 0.3s ease, color 0.3s ease, transform 0.2s ease',
-              flexShrink: 0, // Prevents links from shrinking on smaller screens
+              transition: 'all 0.3s ease',
+              flexShrink: 0,
             }}
             onMouseEnter={(e) => {
-              e.target.style.backgroundColor = '#2c3e50';
-              e.target.style.color = '#e0e0e0';
+              e.target.style.backgroundColor = '#0077cc';
+              e.target.style.color = '#ffffff';
               e.target.style.transform = 'scale(1.05)';
             }}
             onMouseLeave={(e) => {
@@ -99,7 +75,7 @@ export default function Navbar() {
         marginTop: '10px',
       }}>
         <button style={{
-          backgroundColor: '#3498db',
+          backgroundColor: '#0077cc',
           color: 'white',
           border: 'none',
           padding: '12px 25px',
@@ -109,15 +85,15 @@ export default function Navbar() {
           fontWeight: 'bold',
           transition: 'background-color 0.3s ease',
         }}
-        onMouseEnter={(e) => e.target.style.backgroundColor = '#2980b9'}
-        onMouseLeave={(e) => e.target.style.backgroundColor = '#3498db'}
+        onMouseEnter={(e) => e.target.style.backgroundColor = '#005fa3'}
+        onMouseLeave={(e) => e.target.style.backgroundColor = '#0077cc'}
         >
           Connect Wallet
         </button>
         <span style={{
           fontSize: '1.2em',
           fontWeight: 'bold',
-          color: '#7f8c8d',
+          color: '#b0b0b0',
           display: 'flex',
           alignItems: 'center',
         }}>Floor Price: TBC</span>
