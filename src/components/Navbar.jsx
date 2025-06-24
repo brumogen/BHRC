@@ -1,40 +1,23 @@
+// bhrc/src/components/Navbar.jsx
 import React from 'react';
 
-// You'll need an SVG or PNG of a horse here.
-// For now, I'm providing a simple SVG in the code, or you can import from assets:
-// import horseIcon from '../assets/horse-icon.svg'; // If you have a file like this
-
 export default function Navbar() {
-
-  // Simple inline SVG for a horse icon (you can replace this with an imported asset if preferred)
-  const HorseIconSVG = () => (
-    <svg viewBox="0 0 24 24" width="24" height="24" fill="#B8860B" style={{
-      position: 'absolute',
-      top: '-10px', // Adjust to lift it slightly above the border
-      right: '-10px', // Adjust to move it outside the border
-      zIndex: 10,
-      filter: 'drop-shadow(2px 2px 2px rgba(0,0,0,0.2))', // Subtle shadow for depth
-    }}>
-      <path d="M19 10c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm0-4c-1.656 0-3 1.344-3 3s1.344 3 3 3 3-1.344 3-3-1.344-3-3-3zm-10 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm0-4c-1.656 0-3 1.344-3 3s1.344 3 3 3 3-1.344 3-3-1.344-3-3-3zm14 16h-21l-2 2h25l-2-2zm-3-10l-10 10h14l-4-10zm-10-8h-6c-1.104 0-2 .896-2 2v6h10c.552 0 1-.448 1-1v-7c0-.552-.448-1-1-1zm-1 7c0-1.104-.896-2-2-2s-2 .896-2 2 .896 2 2 2 2-.896 2-2z"/>
-    </svg>
-  );
-
-
   return (
     <header style={{
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      padding: '20px', // Increased overall header padding
+      padding: '20px',
       backgroundColor: '#fff',
-      boxShadow: '0 4px 8px rgba(0,0,0,0.1)', // More pronounced shadow for the whole header
+      boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
       width: '100%',
       boxSizing: 'border-box',
     }}>
       {/* Title */}
       <h1 style={{
-        fontSize: '2.5em',
-        margin: '0 0 25px 0', // More margin to separate from new nav box
+        fontFamily: "'Playfair Display', serif", // A more elegant, serif font for the title
+        fontSize: '2.8em', // Slightly larger font for prominence
+        margin: '0 0 30px 0', // Increased bottom margin for better separation
         color: '#2c3e50',
         textAlign: 'center',
         lineHeight: '1.2',
@@ -45,28 +28,24 @@ export default function Navbar() {
         Bustling Horse Race Club
       </h1>
 
-      {/* Sexy Looking Box - The Racing Track */}
+      {/* Sexy Looking Box - The Sleek Navigation Bar */}
       <nav style={{
-        position: 'relative', // Needed for absolute positioning of the horse icon
         display: 'flex',
-        justifyContent: 'center',
-        flexWrap: 'wrap',
-        gap: '20px', // Spacing between links inside the track
-        backgroundColor: '#D4E2C7', // Soft green for the track background
-        border: '2px solid #8B4513', // Brown border for the track edge
-        borderRadius: '50px', // Heavily rounded corners for the oval shape
-        padding: '15px 30px', // Padding inside the track box
-        marginBottom: '30px', // Space below the nav track
-        boxShadow: 'inset 0 0 10px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.15)', // Inner and outer shadow
-        // Optional: Inner dashed border for track lanes
-        backgroundImage: 'linear-gradient(to right, transparent 0%, transparent 10%, #A9A9A9 10%, #A9A9A9 11%, transparent 11%)',
-        backgroundSize: '20px 2px',
-        backgroundRepeat: 'repeat-x',
-        backgroundPosition: 'center', // Center the dashed line
-        lineHeight: '1.5', // For the pseudo-lane effect
+        justifyContent: 'center', // Center items initially
+        alignItems: 'center', // Align items vertically
+        flexWrap: 'wrap', // Allow wrapping for responsiveness
+        gap: '25px', // More space between links
+        backgroundColor: '#34495e', // Deep charcoal grey for a sophisticated look
+        border: '1px solid #7f8c8d', // Subtle light grey border
+        borderRadius: '40px', // Highly rounded corners for a sleek pill shape
+        padding: '15px 40px', // More horizontal padding
+        marginBottom: '30px', // Space below the nav bar
+        boxShadow: '0 6px 15px rgba(0,0,0,0.2)', // More pronounced shadow for elevation
+        maxWidth: '700px', // Constrain max width for better aesthetic on large screens
+        width: 'calc(100% - 40px)', // Allow it to shrink, maintaining padding
+        boxSizing: 'border-box',
       }}>
-        {/* Horse Symbol */}
-        <HorseIconSVG /> {/* Render the horse icon here */}
+        {/* Removed Horse Symbol */}
 
         {/* Navigation Links */}
         {['Home', 'Race Centre', 'Mint', 'Stable', 'About'].map((item) => (
@@ -75,21 +54,23 @@ export default function Navbar() {
             href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
             style={{
               textDecoration: 'none',
-              color: '#4B3F38', // Dark brown text for contrast
-              fontSize: '1.15em', // Slightly larger font
+              color: 'white', // White text for strong contrast
+              fontSize: '1.15em',
               fontWeight: 'bold',
-              padding: '8px 18px', // More padding
-              borderRadius: '25px', // More rounded for individual links
-              transition: 'background-color 0.3s ease, color 0.3s ease',
-              whiteSpace: 'nowrap', // Prevent links from breaking lines
+              padding: '8px 18px',
+              borderRadius: '20px', // Slightly less rounded for individual links
+              transition: 'background-color 0.3s ease, color 0.3s ease, transform 0.2s ease', // Added transform for subtle pop
+              whiteSpace: 'nowrap', // Prevent text from wrapping
             }}
             onMouseEnter={(e) => {
-              e.target.style.backgroundColor = '#8B4513'; // Brown background on hover
-              e.target.style.color = 'white';
+              e.target.style.backgroundColor = '#2c3e50'; // Darker grey on hover
+              e.target.style.color = '#e0e0e0'; // Slightly off-white on hover
+              e.target.style.transform = 'scale(1.05)'; // Subtle pop effect
             }}
             onMouseLeave={(e) => {
               e.target.style.backgroundColor = 'transparent'; // Transparent when not hovered
-              e.target.style.color = '#4B3F38';
+              e.target.style.color = 'white';
+              e.target.style.transform = 'scale(1)';
             }}
           >
             {item}
@@ -104,7 +85,7 @@ export default function Navbar() {
         justifyContent: 'center',
         gap: '20px',
         width: '100%',
-        marginTop: '10px', // Add some space above
+        marginTop: '10px',
       }}>
         <button style={{
           backgroundColor: '#3498db',
