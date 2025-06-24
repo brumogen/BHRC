@@ -1,4 +1,4 @@
-import bannerImg from '../assets/banner.png'; // You’ll add this image in Step 2
+import bannerImg from '../assets/image.png'; // You’ll add this image in Step 2
 
 export default function Home() {
   return (
