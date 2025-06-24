@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/logo.png'; // Make sure path is correct
 
 export default function Navbar() {
   return (
@@ -7,19 +8,29 @@ export default function Navbar() {
       flexDirection: 'column',
       alignItems: 'center',
       padding: '20px',
-      backgroundColor: '#0e1a2b', // Updated background to match logo
+      backgroundColor: '#0e1a2b',
       boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
       width: '100%',
       boxSizing: 'border-box',
     }}>
-      {/* Logo has likely replaced this now — delete if using logo image */}
-      {/* <h1>...</h1> */}
+      {/* Logo Image */}
+      <img
+        src={logo}
+        alt="Bustling Horse Race Club Logo"
+        loading="lazy"
+        style={{
+          maxWidth: '260px',
+          height: 'auto',
+          marginBottom: '30px',
+        }}
+      />
 
+      {/* Navigation Bar */}
       <nav style={{
         display: 'flex',
         alignItems: 'center',
         gap: '25px',
-        backgroundColor: '#101820', // Darker shade for nav pill
+        backgroundColor: '#101820',
         border: '1px solid #0077cc',
         borderRadius: '40px',
         padding: '15px 20px',
