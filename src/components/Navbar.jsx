@@ -15,9 +15,9 @@ export default function Navbar() {
     }}>
       {/* Title */}
       <h1 style={{
-        fontFamily: "'Playfair Display', serif", // A more elegant, serif font for the title
-        fontSize: '2.8em', // Slightly larger font for prominence
-        margin: '0 0 30px 0', // Increased bottom margin for better separation
+        fontFamily: "'Playfair Display', serif", // Retaining the elegant font
+        fontSize: '2.8em',
+        margin: '0 0 30px 0',
         color: '#2c3e50',
         textAlign: 'center',
         lineHeight: '1.2',
@@ -28,47 +28,56 @@ export default function Navbar() {
         Bustling Horse Race Club
       </h1>
 
-      {/* Sexy Looking Box - The Sleek Navigation Bar */}
+      {/* Sexy Looking Box - The Sleek Navigation Bar (Now Scrollable) */}
       <nav style={{
         display: 'flex',
-        justifyContent: 'center', // Center items initially
-        alignItems: 'center', // Align items vertically
-        flexWrap: 'wrap', // Allow wrapping for responsiveness
-        gap: '25px', // More space between links
-        backgroundColor: '#34495e', // Deep charcoal grey for a sophisticated look
-        border: '1px solid #7f8c8d', // Subtle light grey border
-        borderRadius: '40px', // Highly rounded corners for a sleek pill shape
-        padding: '15px 40px', // More horizontal padding
-        marginBottom: '30px', // Space below the nav bar
-        boxShadow: '0 6px 15px rgba(0,0,0,0.2)', // More pronounced shadow for elevation
-        maxWidth: '700px', // Constrain max width for better aesthetic on large screens
-        width: 'calc(100% - 40px)', // Allow it to shrink, maintaining padding
+        // Removed `flexWrap: 'wrap'` to force single line
+        // Removed `justifyContent: 'center'` to allow links to naturally flow from left and enable scroll
+        alignItems: 'center',
+        gap: '25px',
+        backgroundColor: '#34495e',
+        border: '1px solid #7f8c8d',
+        borderRadius: '40px',
+        padding: '15px 20px', // Adjusted horizontal padding to allow more scroll room
+        marginBottom: '30px',
+        boxShadow: '0 6px 15px rgba(0,0,0,0.2)',
+        maxWidth: '100%', // Allow it to take full width
+        width: 'auto', // Allow content to dictate width before overflow
         boxSizing: 'border-box',
-      }}>
-        {/* Removed Horse Symbol */}
 
+        // --- NEW STYLES FOR SCROLLABILITY ---
+        overflowX: 'auto', // Enable horizontal scrolling when content overflows
+        whiteSpace: 'nowrap', // Crucial: Prevents items from wrapping to the next line
+        WebkitOverflowScrolling: 'touch', // Improves scrolling performance on iOS devices
+        // Hide scrollbar for cleaner look (optional, but common)
+        scrollbarWidth: 'none', /* Firefox */
+        MsOverflowStyle: 'none',  /* IE and Edge */
+        '&::-webkit-scrollbar': { /* Chrome, Safari, Opera */
+            display: 'none'
+        },
+      }}>
         {/* Navigation Links */}
-        {['Home', 'Race Centre', 'Mint', 'Stable', 'About'].map((item) => (
+        {['Home', 'Race Centre', 'Mint', 'Stable', 'About', 'Contact', 'FAQ'].map((item) => ( // Added a couple more dummy links to demonstrate scroll
           <a
             key={item}
             href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
             style={{
               textDecoration: 'none',
-              color: 'white', // White text for strong contrast
+              color: 'white',
               fontSize: '1.15em',
               fontWeight: 'bold',
               padding: '8px 18px',
-              borderRadius: '20px', // Slightly less rounded for individual links
-              transition: 'background-color 0.3s ease, color 0.3s ease, transform 0.2s ease', // Added transform for subtle pop
-              whiteSpace: 'nowrap', // Prevent text from wrapping
+              borderRadius: '20px',
+              transition: 'background-color 0.3s ease, color 0.3s ease, transform 0.2s ease',
+              flexShrink: 0, // Prevents links from shrinking on smaller screens
             }}
             onMouseEnter={(e) => {
-              e.target.style.backgroundColor = '#2c3e50'; // Darker grey on hover
-              e.target.style.color = '#e0e0e0'; // Slightly off-white on hover
-              e.target.style.transform = 'scale(1.05)'; // Subtle pop effect
+              e.target.style.backgroundColor = '#2c3e50';
+              e.target.style.color = '#e0e0e0';
+              e.target.style.transform = 'scale(1.05)';
             }}
             onMouseLeave={(e) => {
-              e.target.style.backgroundColor = 'transparent'; // Transparent when not hovered
+              e.target.style.backgroundColor = 'transparent';
               e.target.style.color = 'white';
               e.target.style.transform = 'scale(1)';
             }}
