@@ -4,19 +4,13 @@ export default function Home() {
   return (
     <div style={{
       fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-      color: '#333',
-      backgroundColor: '#f8f8f8',
+      color: '#ffffff',
+      backgroundColor: '#0e1a2b', // Full page navy background
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
       boxSizing: 'border-box',
     }}>
-
-      {/* REMOVE THE ENTIRE <header> BLOCK FROM HERE */}
-      {/* ... up to here ... */}
-
-
-      {/* Main Content Area - KEEP THIS AND BELOW */}
       <main style={{
         flexGrow: '1',
         maxWidth: '1200px',
@@ -30,7 +24,7 @@ export default function Home() {
           marginBottom: '40px',
           borderRadius: '8px',
           overflow: 'hidden',
-          boxShadow: '0 4px 8px rgba(0,0,0,0.15)',
+          boxShadow: '0 4px 8px rgba(0,0,0,0.5)',
         }}>
           <img src={bannerImg} alt="Banner" style={{
             width: '100%',
@@ -41,49 +35,49 @@ export default function Home() {
           }} />
         </div>
 
-        {/* Race Info */}
+        {/* Next Race Box */}
         <section style={{
           padding: '30px',
-          backgroundColor: '#fff',
+          backgroundColor: '#1c2a3a', // Card navy
           borderRadius: '8px',
-          boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+          boxShadow: '0 2px 10px rgba(0,0,0,0.4)',
           marginBottom: '30px',
         }}>
           <h2 style={{
-            color: '#2c3e50',
+            color: '#ffffff',
             fontSize: '1.8em',
             marginBottom: '15px',
-            borderBottom: '2px solid #eee',
+            borderBottom: '2px solid #333',
             paddingBottom: '10px',
           }}>Next Race:</h2>
           <p style={{ fontSize: '1.1em', marginBottom: '8px' }}><strong>Date:</strong> TBC</p>
           <p style={{ fontSize: '1.1em' }}><strong>Prize Pot:</strong> TBC</p>
         </section>
 
-        {/* Resources Links */}
+        {/* Resources Box */}
         <section style={{
           padding: '30px',
-          backgroundColor: '#fff',
+          backgroundColor: '#1c2a3a',
           borderRadius: '8px',
-          boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+          boxShadow: '0 2px 10px rgba(0,0,0,0.4)',
         }}>
           <h3 style={{
-            color: '#2c3e50',
+            color: '#ffffff',
             fontSize: '1.6em',
             marginBottom: '15px',
-            borderBottom: '2px solid #eee',
+            borderBottom: '2px solid #333',
             paddingBottom: '10px',
           }}>Resources</h3>
           <ul style={{ listStyleType: 'none', padding: '0' }}>
             <li style={{ marginBottom: '10px' }}>
               <a href="#" target="_blank" rel="noreferrer" style={{
                 textDecoration: 'none',
-                color: '#3498db',
+                color: '#0077cc',
                 fontSize: '1.1em',
                 transition: 'color 0.3s ease',
               }}
-              onMouseEnter={(e) => e.target.style.color = '#2980b9'}
-              onMouseLeave={(e) => e.target.style.color = '#3498db'}
+              onMouseEnter={(e) => e.target.style.color = '#3399ff'}
+              onMouseLeave={(e) => e.target.style.color = '#0077cc'}
               >
                 Twitter (TBC)
               </a>
@@ -91,12 +85,12 @@ export default function Home() {
             <li>
               <a href="#" target="_blank" rel="noreferrer" style={{
                 textDecoration: 'none',
-                color: '#3498db',
+                color: '#0077cc',
                 fontSize: '1.1em',
                 transition: 'color 0.3s ease',
               }}
-              onMouseEnter={(e) => e.target.style.color = '#2980b9'}
-              onMouseLeave={(e) => e.target.style.color = '#3498db'}
+              onMouseEnter={(e) => e.target.style.color = '#3399ff'}
+              onMouseLeave={(e) => e.target.style.color = '#0077cc'}
               >
                 Whitepaper (TBC)
               </a>
@@ -109,8 +103,8 @@ export default function Home() {
         textAlign: 'center',
         padding: '20px',
         marginTop: 'auto',
-        backgroundColor: '#333',
-        color: '#fff',
+        backgroundColor: '#101820',
+        color: '#ffffff',
         fontSize: '0.9em',
       }}>
         &copy; {new Date().getFullYear()} Bustling Horse Race Club. All rights reserved.
