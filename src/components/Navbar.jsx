@@ -1,61 +1,95 @@
-// bhrc/src/components/Navbar.jsx
 import React from 'react';
-// No bannerImg needed here unless your Navbar itself has an image, which it currently doesn't based on this header block
+
+// You'll need an SVG or PNG of a horse here.
+// For now, I'm providing a simple SVG in the code, or you can import from assets:
+// import horseIcon from '../assets/horse-icon.svg'; // If you have a file like this
 
 export default function Navbar() {
+
+  // Simple inline SVG for a horse icon (you can replace this with an imported asset if preferred)
+  const HorseIconSVG = () => (
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="#B8860B" style={{
+      position: 'absolute',
+      top: '-10px', // Adjust to lift it slightly above the border
+      right: '-10px', // Adjust to move it outside the border
+      zIndex: 10,
+      filter: 'drop-shadow(2px 2px 2px rgba(0,0,0,0.2))', // Subtle shadow for depth
+    }}>
+      <path d="M19 10c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm0-4c-1.656 0-3 1.344-3 3s1.344 3 3 3 3-1.344 3-3-1.344-3-3-3zm-10 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm0-4c-1.656 0-3 1.344-3 3s1.344 3 3 3 3-1.344 3-3-1.344-3-3-3zm14 16h-21l-2 2h25l-2-2zm-3-10l-10 10h14l-4-10zm-10-8h-6c-1.104 0-2 .896-2 2v6h10c.552 0 1-.448 1-1v-7c0-.552-.448-1-1-1zm-1 7c0-1.104-.896-2-2-2s-2 .896-2 2 .896 2 2 2 2-.896 2-2z"/>
+    </svg>
+  );
+
+
   return (
     <header style={{
       display: 'flex',
-      flexDirection: 'column', // Changed to column to stack elements on top of each other
-      alignItems: 'center', // Center items horizontally
-      padding: '15px 20px', // Adjusted padding
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding: '20px', // Increased overall header padding
       backgroundColor: '#fff',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-      width: '100%', // Ensure it takes full width
+      boxShadow: '0 4px 8px rgba(0,0,0,0.1)', // More pronounced shadow for the whole header
+      width: '100%',
       boxSizing: 'border-box',
     }}>
       {/* Title */}
       <h1 style={{
-        fontSize: '2.5em', // Increased font size for prominence
-        margin: '0 0 15px 0', // Bottom margin to separate from nav
+        fontSize: '2.5em',
+        margin: '0 0 25px 0', // More margin to separate from new nav box
         color: '#2c3e50',
-        textAlign: 'center', // Center the text within its container
-        lineHeight: '1.2', // Improve line spacing if it wraps
-        padding: '0 10px', // Small horizontal padding to prevent text from touching edges
+        textAlign: 'center',
+        lineHeight: '1.2',
+        padding: '0 10px',
         boxSizing: 'border-box',
-        whiteSpace: 'normal', // Allow text to wrap naturally
+        whiteSpace: 'normal',
       }}>
         Bustling Horse Race Club
       </h1>
 
-      {/* Navigation Links */}
+      {/* Sexy Looking Box - The Racing Track */}
       <nav style={{
+        position: 'relative', // Needed for absolute positioning of the horse icon
         display: 'flex',
-        justifyContent: 'center', // Center the links
-        flexWrap: 'wrap', // Allow links to wrap to the next line on smaller screens
-        gap: '20px', // Space between navigation items
-        marginBottom: '20px', // Space below nav
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+        gap: '20px', // Spacing between links inside the track
+        backgroundColor: '#D4E2C7', // Soft green for the track background
+        border: '2px solid #8B4513', // Brown border for the track edge
+        borderRadius: '50px', // Heavily rounded corners for the oval shape
+        padding: '15px 30px', // Padding inside the track box
+        marginBottom: '30px', // Space below the nav track
+        boxShadow: 'inset 0 0 10px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.15)', // Inner and outer shadow
+        // Optional: Inner dashed border for track lanes
+        backgroundImage: 'linear-gradient(to right, transparent 0%, transparent 10%, #A9A9A9 10%, #A9A9A9 11%, transparent 11%)',
+        backgroundSize: '20px 2px',
+        backgroundRepeat: 'repeat-x',
+        backgroundPosition: 'center', // Center the dashed line
+        lineHeight: '1.5', // For the pseudo-lane effect
       }}>
+        {/* Horse Symbol */}
+        <HorseIconSVG /> {/* Render the horse icon here */}
+
+        {/* Navigation Links */}
         {['Home', 'Race Centre', 'Mint', 'Stable', 'About'].map((item) => (
           <a
             key={item}
             href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
             style={{
               textDecoration: 'none',
-              color: '#555',
-              fontSize: '1.1em',
+              color: '#4B3F38', // Dark brown text for contrast
+              fontSize: '1.15em', // Slightly larger font
               fontWeight: 'bold',
-              padding: '8px 15px',
-              borderRadius: '5px',
+              padding: '8px 18px', // More padding
+              borderRadius: '25px', // More rounded for individual links
               transition: 'background-color 0.3s ease, color 0.3s ease',
+              whiteSpace: 'nowrap', // Prevent links from breaking lines
             }}
             onMouseEnter={(e) => {
-              e.target.style.backgroundColor = '#3498db';
+              e.target.style.backgroundColor = '#8B4513'; // Brown background on hover
               e.target.style.color = 'white';
             }}
             onMouseLeave={(e) => {
-              e.target.style.backgroundColor = 'transparent';
-              e.target.style.color = '#555';
+              e.target.style.backgroundColor = 'transparent'; // Transparent when not hovered
+              e.target.style.color = '#4B3F38';
             }}
           >
             {item}
@@ -70,6 +104,7 @@ export default function Navbar() {
         justifyContent: 'center',
         gap: '20px',
         width: '100%',
+        marginTop: '10px', // Add some space above
       }}>
         <button style={{
           backgroundColor: '#3498db',
@@ -98,4 +133,3 @@ export default function Navbar() {
     </header>
   );
 }
-
