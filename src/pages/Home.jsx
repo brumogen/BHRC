@@ -1,5 +1,3 @@
-import bannerImg from '../assets/image.png';
-
 export default function Home() {
   return (
     <div style={{
@@ -19,22 +17,6 @@ export default function Home() {
         boxSizing: 'border-box',
         width: '100%',
       }}>
-        {/* Banner Image */}
-        <div style={{
-          marginBottom: '40px',
-          borderRadius: '8px',
-          overflow: 'hidden',
-          boxShadow: '0 4px 8px rgba(0,0,0,0.5)',
-        }}>
-          <img src={bannerImg} alt="Banner" style={{
-            width: '100%',
-            maxHeight: '450px',
-            objectFit: 'cover',
-            display: 'block',
-            objectPosition: 'top center',
-          }} />
-        </div>
-
         {/* Next Race Box */}
         <section style={{
           padding: '30px',
