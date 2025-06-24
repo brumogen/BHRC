@@ -22,7 +22,7 @@ export default function Navbar() {
         textAlign: 'center',
         lineHeight: '1.2',
         padding: '0 10px',
-        boxSizing: 'border-box',
+        boxSizing: 'border-sizing',
         whiteSpace: 'normal',
       }}>
         Bustling Horse Race Club
@@ -57,14 +57,16 @@ export default function Navbar() {
         },
       }}>
         {/* Navigation Links */}
-        {['Home', 'Race Centre', 'Mint', 'Stable', 'About', 'Contact', 'FAQ'].map((item) => ( // Added a couple more dummy links to demonstrate scroll
+        {/* Filtered out 'Contact' and 'FAQ' */}
+        {['Home', 'Race Centre', 'Mint', 'Stable', 'About'].map((item) => (
           <a
             key={item}
             href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
             style={{
               textDecoration: 'none',
               color: 'white',
-              fontSize: '1.15em',
+              fontFamily: "'Montserrat', sans-serif", // Changed to Montserrat for a sexier font
+              fontSize: '1.25em', // Slightly increased font size
               fontWeight: 'bold',
               padding: '8px 18px',
               borderRadius: '20px',
